@@ -20,6 +20,9 @@ app.get('/beers',function(req, res){
 });
 
 app.get('/beers/:beerId', function(req, res){
-    console.log('Recieived request from'+req.params['beerId']+' from', req.ip);
-    res.send('Hello beer '+req.parms['beerId']);
+    console.log('Recieived request from '+req.params['beerId']+' from', req.ip);
+    res.send('Hello beer '+req.params['beerId']);
 });
+
+app.use('/img',express.static('img'));
+app.use(express.static('public'))
