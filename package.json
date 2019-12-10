@@ -1,0 +1,23 @@
+{
+  "name": "express-beers",
+  "version": "1.0.0",
+  "description": "\"Tutorial to create a backend server\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "\"test\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/h42m0ny/express-beers.git"
+  },
+  "keywords": [
+    "\"expressJs\"",
+    "\"nodeJs\""
+  ],
+  "author": "\"h42m0ny\"",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/h42m0ny/express-beers/issues"
+  },
+  "homepage": "https://github.com/h42m0ny/express-beers#readme"
+}
