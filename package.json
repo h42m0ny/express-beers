@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/h42m0ny/express-beers/issues"
   },
-  "homepage": "https://github.com/h42m0ny/express-beers#readme"
+  "homepage": "https://github.com/h42m0ny/express-beers#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
