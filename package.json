@@ -4,7 +4,8 @@
   "description": "\"Tutorial to create a backend server\"",
   "main": "index.js",
   "scripts": {
-    "test": "\"test\""
+    "start": "nodemon index.js",
+    "test": "echo 'Error no tests specified' && exit 1"
   },
   "repository": {
     "type": "git",
@@ -21,6 +22,7 @@
   },
   "homepage": "https://github.com/h42m0ny/express-beers#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "nodemon": "^2.0.1"
   }
 }
