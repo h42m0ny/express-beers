@@ -1,7 +1,7 @@
 import {LitElement, html} from '../../web_modules/lit-element.js';
 import bootstrapStyle from '../../web_modules/@granite-elements/granite-lit-bootstrap.js';
-import {HashRouter} from '../../web_modules/@granite-elements/granite-vaadin-router.js';
-//import {Router} from '../../web_modules/@vaadin/router.js';
+// import {HashRouter} from '../../web_modules/@granite-elements/granite-vaadin-router.js';
+import {Router} from '../../web_modules/@vaadin/router.js';
 import './beer-list.js';
 import './beer-details.js';
 import './beer-home.js';
@@ -25,10 +25,10 @@ class BeerMain extends LitElement {
 
     firstUpdated() {
         const outlet = this.shadowRoot.querySelector('#outlet');
-        const  router = new HashRouter(outlet);
+        const  router = new Router(outlet);
         router.setRoutes([  
             {path: '/beers',  component: 'beer-list'},
-            {path: '/beer/:id', component: 'beer-details'},
+            {path: '/beers/:id', component: 'beer-details'},
             {path: '(.*)', component: 'beer-list'},
         ]);
     }

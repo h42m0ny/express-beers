@@ -53,8 +53,8 @@ class BeerListItem extends LitElement {
                   }
             </style>
             <div id="${this.id}" class="beer clearfix">
-        <img class="float-right el-img" src="app/data/img/${this.img}"/>
-        <a href="#/beer/${this.id}">
+        <img class="float-right el-img" src="/img/${this.img}"/>
+        <a href="/beers/${this.id}">
           <h2 class="el-name">${this.name}</h2>
         </a>
         <p class="el-description">${this.description}</p>

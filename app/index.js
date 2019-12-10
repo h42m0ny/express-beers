@@ -1,6 +1,15 @@
 var express = require('express');
-
 var app = express();
+var cors = require('cors');
+var MongoClient = require('mongodb').MongoClient;
+var url = 'mongodb://localhost/beersDb';
+
+MongoClient.connect(url,function(err,client){
+    console.log("Connected correctly to MongoDB server.");
+    client.close();
+});
+
+app.use(cors());
 
 var beersList = require('./beers/beers.json');
 console.log("Beers",beersList);
@@ -21,17 +30,39 @@ var server = app.listen(3000, function (){
 // ROUTES
 /////////////////////////////////////////
 
-app.get('/beers',function(req, res){
+app.get('/beers',async function(req, res){
     console.log('Received request for beers from', req.ip);
-    res.json(beersList);
+    let client;
+    try {
+        client = await MongoClient.connect(url);
+        const db = client.db('beersDb');
+        var beerList = await db.collection('beers').find().toArray();
+        res.json(beerList);
+
+    } catch (err){
+        console.log(err.stack);
+    }
+    client.close();
+    // res.json(beersList);
 });
 
-app.get('/beers/:beerId', function(req, res){
+app.get('/beers/:beerId', async function(req, res){
     console.log('Recieived request from '+req.params['beerId']+' from', req.ip);
-    var beerDetails = require('./beers/'+req.params['beerId']+'.json')
-    res.json(beerDetails);
+    let client;
+    try{
+        client =  await MongoClient.connect(url);
+        const db = client.db('beersDb');
+        let beerId = req.params.beerId;
+        var beer = await db.collection('beers').find({id: beerId}).toArray();
+        console.log(beer[0]);
+        res.json(beer[0]);
+    } catch(err) {
+        console.log(err.stack);
+    }
+    client.close();
 });
 
 
 app.use('/img',express.static('img'));
-app.use(express.static('public'))
+app.use('/beers/img',express.static('img'));
+app.use(express.static('public'));
