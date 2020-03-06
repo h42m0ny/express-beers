@@ -11,8 +11,6 @@ MongoClient.connect(url,function(err,client){
 
 app.use(cors());
 
-var beersList = require('./beers/beers.json');
-console.log("Beers",beersList);
 
 var server = app.listen(process.env.PORT, function (){
     var host = server.address().address;
