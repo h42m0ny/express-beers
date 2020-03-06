@@ -14,10 +14,10 @@ app.use(cors());
 var beersList = require('./beers/beers.json');
 console.log("Beers",beersList);
 
-app.get('/',function(req,res){
-    console.log('Received request from', req.ip);
-    res.send('Hello World !');
-});
+// app.get('/',function(req,res){
+//     console.log('Received request from', req.ip);
+//     res.send('Hello World !');
+// });
 
 var server = app.listen(process.env.PORT, function (){
     var host = server.address().address;
