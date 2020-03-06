@@ -2,7 +2,7 @@ var express = require('express');
 var app = express();
 var cors = require('cors');
 var MongoClient = require('mongodb').MongoClient;
-var url = `${process.env.MONGODB_ADDON_URI}:${env.MONGODB_ADDON_PORT}`;
+var url = `${process.env.MONGODB_ADDON_URI}:${process.env.MONGODB_ADDON_PORT}`;
 
 MongoClient.connect(url,function(err,client){
     console.log("Connected correctly to MongoDB server.");
