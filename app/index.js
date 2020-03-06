@@ -6,7 +6,7 @@ var url = `${process.env.MONGODB_ADDON_URI}`;
 
 MongoClient.connect(url,function(err,client){
     console.log("Connected correctly to MongoDB server.");
-    //client.close();
+    client.close();
 });
 
 app.use(cors());
@@ -14,15 +14,9 @@ app.use(cors());
 var beersList = require('./beers/beers.json');
 console.log("Beers",beersList);
 
-// app.get('/',function(req,res){
-//     console.log('Received request from', req.ip);
-//     res.send('Hello World !');
-// });
-
 var server = app.listen(process.env.PORT, function (){
     var host = server.address().address;
     var port = server.address().port;
-
     console.log('Listening at http://%s:%s',host,port);
 });
 
