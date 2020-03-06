@@ -15,12 +15,10 @@ async function init() {
             'AffligemDubbel'
         ]
 
-        beerList.forEach( (beerName) => {
+        beerList.forEach( async (beerName) =>  {
             let beer = require(`./app/beers/${beerName}.json`);
             let beerInDb = await db.collection('beers').insertOne(beer);
-        });
-        
-    
+        });           
 
     } catch (err){
         console.log(err.stack);
