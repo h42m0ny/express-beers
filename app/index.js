@@ -65,4 +65,4 @@ app.get('/beers/:beerId', async function(req, res){
 
 app.use('/img',express.static('img'));
 app.use('/beers/img',express.static('img'));
-app.use(express.static('public'));
+app.use(express.static('./app/public/'));
