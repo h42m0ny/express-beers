@@ -26,7 +26,7 @@ async function init() {
         ]
 
         beerList.forEach( async (beerName) =>  {
-            let beer = require(`./app/beers/${beerName}.json`);
+            let beer = require(`./beers/${beerName}.json`);
             let beerInDb = await db.collection('beers').insertOne(beer);
         });           
 
