@@ -62,7 +62,8 @@ app.get('/beers/:beerId', async function(req, res){
     client.close();
 });
 
-
 app.use('/img',express.static('img'));
 app.use('/beers/img',express.static('img'));
+app.use('/img/beers/img',express.static('img'));
+app.use('/img/beers/img',express.static('./app/img'));
 app.use(express.static('./app/public/'));
