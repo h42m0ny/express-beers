@@ -11,7 +11,6 @@ MongoClient.connect(url,function(err,client){
 
 app.use(cors());
 
-
 var server = app.listen(process.env.PORT, function (){
     var host = server.address().address;
     var port = server.address().port;
@@ -30,7 +29,6 @@ app.get('/beers',async function(req, res){
         const db = client.db(process.env.MONGODB_ADDON_DB);
         var beerList = await db.collection('beers').find().toArray();
         res.json(beerList);
-
     } catch (err){
         console.log(err.stack);
     }
