@@ -12,7 +12,17 @@ async function init() {
 
         let beerList = [  
             'AffligemBlond',
-            'AffligemDubbel'
+            'AffligemDubbel',
+            'AffligemTripel',
+            'ChimayRouge',
+            'ChimayTriple',
+            'StBernardusAbt12',
+            'StBernardusTripel',
+            'StBernardusPater6',
+            'RinceCochon',
+            'TrappistesRochefort6',
+            'TrappistesRochefort8',
+            'TrappistesRochefort10',
         ]
 
         beerList.forEach( async (beerName) =>  {
