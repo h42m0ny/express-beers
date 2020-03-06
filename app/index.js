@@ -2,7 +2,7 @@ var express = require('express');
 var app = express();
 var cors = require('cors');
 var MongoClient = require('mongodb').MongoClient;
-var url = 'env.MONGODB_ADDON_URI:env.MONGODB_ADDON_PORT';
+var url = 'process.env.MONGODB_ADDON_URI:env.MONGODB_ADDON_PORT';
 
 MongoClient.connect(url,function(err,client){
     console.log("Connected correctly to MongoDB server.");
@@ -19,7 +19,7 @@ app.get('/',function(req,res){
     res.send('Hello World !');
 });
 
-var server = app.listen(3000, function (){
+var server = app.listen(process.env.PORT, function (){
     var host = server.address().address;
     var port = server.address().port;
 
