@@ -6,7 +6,7 @@ var url = `${process.env.MONGODB_ADDON_URI}:${process.env.MONGODB_ADDON_PORT}`;
 
 MongoClient.connect(url,function(err,client){
     console.log("Connected correctly to MongoDB server.");
-    client.close();
+    //client.close();
 });
 
 app.use(cors());
@@ -43,7 +43,7 @@ app.get('/beers',async function(req, res){
         console.log(err.stack);
     }
     client.close();
-    // res.json(beersList);
+    res.json(beersList);
 });
 
 app.get('/beers/:beerId', async function(req, res){
