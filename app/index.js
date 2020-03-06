@@ -35,7 +35,7 @@ app.get('/beers',async function(req, res){
     let client;
     try {
         client = await MongoClient.connect(url);
-        const db = client.db('byidwm5vywywam7');
+        const db = client.db('beersDb');
         var beerList = await db.collection('beers').find().toArray();
         res.json(beerList);
 
@@ -51,7 +51,7 @@ app.get('/beers/:beerId', async function(req, res){
     let client;
     try{
         client =  await MongoClient.connect(url);
-        const db = client.db('byidwm5vywywam7');
+        const db = client.db('beersDb');
         let beerId = req.params.beerId;
         var beer = await db.collection('beers').find({id: beerId}).toArray();
         console.log(beer[0]);
