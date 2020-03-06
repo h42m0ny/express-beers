@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "\"Tutorial to create a backend server\"",
   "scripts": {
-    "start": "node index.js",
+    "start": "node ./app/index.js",
     "test": "echo 'Error no tests specified' && exit 1"
   },
   "repository": {
