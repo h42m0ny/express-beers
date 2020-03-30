@@ -4,7 +4,6 @@
   "description": "\"Tutorial to create a backend server\"",
   "scripts": {
     "start": "node ./app/index.js",
-    "postinstall": "node ./app/initdb.js",
     "test": "echo 'Error no tests specified' && exit 1"
   },
   "repository": {
