@@ -52,8 +52,8 @@ app.get('/beers/:beerId', async function(req, res){
     client.close();
 });
 
-app.use('/img',express.static('img'));
-app.use('/beers/img',express.static('img'));
-app.use('/img/beers/img',express.static('img'));
-app.use('/img/beers/img',express.static('./img'));
-app.use(express.static('./public/'));
+app.use('./app/img',express.static('img'));
+app.use('./app/beers/img',express.static('img'));
+app.use('.app/img/beers/img',express.static('img'));
+app.use('./app/img/beers/img',express.static('./img'));
+app.use(express.static('./app/public/'));
